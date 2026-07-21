@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env files — NEVER push these
+.env
+backend/.env
+frontend/.env
+
+# OS/Editor
+.DS_Store
+.vscode/
