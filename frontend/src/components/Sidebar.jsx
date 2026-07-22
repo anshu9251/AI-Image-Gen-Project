@@ -384,7 +384,7 @@ export const Sidebar = ({
         }
         .sidebar-collapse-btn:hover {
           color: var(--text-primary);
-          background: rgba(255,255,255,0.06);
+          background: var(--bg-sidebar-item);
         }
 
         /* ─ New button ─ */
@@ -518,9 +518,13 @@ export const Sidebar = ({
           background: var(--bg-sidebar-item);
         }
         .sidebar-session.active {
-          color: #fff;
-          background: rgba(124,58,237,0.14);
-          border-color: rgba(124,58,237,0.22);
+          color: var(--text-primary);
+          background: rgba(124,58,237,0.16);
+          border-color: rgba(124,58,237,0.35);
+          font-weight: 600;
+        }
+        [data-theme='dark'] .sidebar-session.active {
+          color: #ffffff;
         }
 
         .session-icon { flex-shrink: 0; opacity: 0.6; }
@@ -555,7 +559,7 @@ export const Sidebar = ({
           justify-content: center;
           transition: all var(--transition-fast);
         }
-        .session-action:hover { color: var(--text-primary); background: rgba(255,255,255,0.08); }
+        .session-action:hover { color: var(--text-primary); background: var(--bg-sidebar-item); }
         .session-action.delete:hover { color: var(--status-error); background: rgba(239,68,68,0.12); }
 
         .session-edit-wrap {
@@ -568,7 +572,7 @@ export const Sidebar = ({
         .session-edit-input {
           flex: 1;
           min-width: 0;
-          background: rgba(255,255,255,0.06);
+          background: var(--bg-input);
           border: 1px solid var(--border-focus);
           border-radius: var(--radius-xs);
           padding: 2px 6px;
@@ -588,7 +592,7 @@ export const Sidebar = ({
         .session-edit-btn.confirm { color: var(--status-success); }
         .session-edit-btn.confirm:hover { background: rgba(16,185,129,0.12); }
         .session-edit-btn.cancel { color: var(--text-muted); }
-        .session-edit-btn.cancel:hover { background: rgba(255,255,255,0.08); }
+        .session-edit-btn.cancel:hover { background: var(--bg-sidebar-item); }
 
         /* ─ Footer ─ */
         .sidebar-footer {

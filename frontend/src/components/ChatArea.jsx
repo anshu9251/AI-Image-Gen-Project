@@ -658,7 +658,7 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle, onTogg
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    background: rgba(255,255,255,0.04);
+    background: var(--bg-input);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 7px 14px;
@@ -847,11 +847,12 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle, onTogg
   .image-wrapper {
     width: 100%;
     aspect-ratio: 1;
-    background: rgba(0,0,0,0.2);
+    background: var(--bg-elevated);
     cursor: pointer;
     overflow: hidden;
     position: relative;
   }
+
   .image-wrapper img {
     width: 100%;
     height: 100%;
@@ -907,6 +908,7 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle, onTogg
     overflow: hidden;
     width: 460px;
     max-width: 100%;
+    border: 1px solid var(--border);
   }
 
   .skeleton-body {
@@ -915,7 +917,7 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle, onTogg
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
-    background: rgba(0,0,0,0.25);
+    background: var(--bg-surface);
     min-height: 200px;
     justify-content: center;
   }

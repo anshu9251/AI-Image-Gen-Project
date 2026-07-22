@@ -113,66 +113,66 @@
   color-scheme: light;
 
   /* ─── Backgrounds ─────────────────────────────────────────────────────────── */
-  --bg-base:         #f0f0f8;
-  --bg-primary:      #f4f4fc;
+  --bg-base:         #f1f5f9;
+  --bg-primary:      #f8fafc;
   --bg-surface:      #ffffff;
-  --bg-elevated:     #eeeef8;
-  --bg-sidebar:      rgba(244, 244, 252, 0.97);
-  --bg-sidebar-item: rgba(0, 0, 0, 0.04);
-  --bg-input:        rgba(255, 255, 255, 0.85);
-  --bg-bubble-user:  rgba(109, 40, 217, 0.1);
-  --bg-glass:        rgba(255, 255, 255, 0.7);
+  --bg-elevated:     #e2e8f0;
+  --bg-sidebar:      rgba(248, 250, 252, 0.96);
+  --bg-sidebar-item: rgba(15, 23, 42, 0.05);
+  --bg-input:        #ffffff;
+  --bg-bubble-user:  rgba(124, 58, 237, 0.12);
+  --bg-glass:        rgba(255, 255, 255, 0.85);
 
   /* ─── Gradient mesh (light version) ─────────────────────────────────────── */
   --grad-mesh:
-    radial-gradient(ellipse at 15% 40%,  rgba(124, 58, 237, 0.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 15%,  rgba(59, 130, 246, 0.09) 0%, transparent 55%),
-    radial-gradient(ellipse at 55% 85%,  rgba(139, 92, 246, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%,  rgba(37,  99, 235, 0.05) 0%, transparent 45%);
+    radial-gradient(ellipse at 15% 40%,  rgba(124, 58, 237, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%,  rgba(59, 130, 246, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 55% 85%,  rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%,  rgba(37,  99, 235, 0.04) 0%, transparent 45%);
 
   /* ─── Accent (same brand colors) ─────────────────────────────────────────── */
-  --accent-a:       #7c3aed;
-  --accent-b:       #5b21b6;
-  --accent-c:       #3b82f6;
-  --accent-soft:    #8b5cf6;
-  --accent-glow:    rgba(124, 58, 237, 0.3);
-  --accent-glow-lg: rgba(124, 58, 237, 0.15);
+  --accent-a:       #6d28d9;
+  --accent-b:       #4c1d95;
+  --accent-c:       #2563eb;
+  --accent-soft:    #7c3aed;
+  --accent-glow:    rgba(109, 40, 217, 0.25);
+  --accent-glow-lg: rgba(109, 40, 217, 0.14);
 
   --grad-accent:   linear-gradient(135deg, var(--accent-a) 0%, var(--accent-c) 100%);
-  --grad-accent-h: linear-gradient(135deg, #8b5cf6 0%, #60a5fa 100%);
+  --grad-accent-h: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
 
   /* ─── Borders ─────────────────────────────────────────────────────────────── */
-  --border:        rgba(0, 0, 0, 0.09);
-  --border-soft:   rgba(0, 0, 0, 0.06);
-  --border-strong: rgba(0, 0, 0, 0.15);
-  --border-focus:  rgba(124, 58, 237, 0.5);
-  --border-accent: rgba(124, 58, 237, 0.35);
+  --border:        rgba(15, 23, 42, 0.12);
+  --border-soft:   rgba(15, 23, 42, 0.07);
+  --border-strong: rgba(15, 23, 42, 0.20);
+  --border-focus:  rgba(109, 40, 217, 0.6);
+  --border-accent: rgba(109, 40, 217, 0.35);
   --border-color:  var(--border);
   --border-active: var(--border-accent);
 
   /* ─── Text ────────────────────────────────────────────────────────────────── */
-  --text-primary:   #1a1b2e;
-  --text-secondary: #4b5068;
-  --text-muted:     #8b90a8;
-  --text-disabled:  #c0c4d6;
+  --text-primary:   #0f172a;
+  --text-secondary: #334155;
+  --text-muted:     #64748b;
+  --text-disabled:  #94a3b8;
 
   /* ─── Glass ───────────────────────────────────────────────────────────────── */
-  --glass-bg:       rgba(255, 255, 255, 0.7);
-  --glass-border:   rgba(0, 0, 0, 0.07);
-  --glass-backdrop: blur(20px) saturate(150%);
-  --glass-shadow:   0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+  --glass-bg:       rgba(255, 255, 255, 0.85);
+  --glass-border:   rgba(15, 23, 42, 0.08);
+  --glass-backdrop: blur(20px) saturate(160%);
+  --glass-shadow:   0 4px 20px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
   /* ─── Shadows ─────────────────────────────────────────────────────────────── */
-  --shadow-xs:          0 1px 3px  rgba(0,0,0,0.08);
-  --shadow-sm:          0 4px 12px rgba(0,0,0,0.10);
-  --shadow-md:          0 8px 28px rgba(0,0,0,0.12);
-  --shadow-lg:          0 16px 48px rgba(0,0,0,0.14);
+  --shadow-xs:          0 1px 3px  rgba(15, 23, 42, 0.06);
+  --shadow-sm:          0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-md:          0 8px 24px rgba(15, 23, 42, 0.10);
+  --shadow-lg:          0 16px 40px rgba(15, 23, 42, 0.12);
   --shadow-glass:       var(--glass-shadow);
-  --shadow-glass-hover: 0 12px 40px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.06);
-  --shadow-accent:      0 4px 16px rgba(124, 58, 237, 0.25);
-  --shadow-accent-lg:   0 8px 28px rgba(124, 58, 237, 0.18);
+  --shadow-glass-hover: 0 12px 36px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  --shadow-accent:      0 4px 16px rgba(109, 40, 217, 0.22);
+  --shadow-accent-lg:   0 8px 28px rgba(109, 40, 217, 0.28);
 
-  /* ─── Status (same) ───────────────────────────────────────────────────────── */
+  /* ─── Status ──────────────────────────────────────────────────────────────── */
   --status-success: #059669;
   --status-error:   #dc2626;
   --status-warning: #d97706;

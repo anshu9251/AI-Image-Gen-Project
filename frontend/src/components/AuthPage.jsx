@@ -383,7 +383,7 @@ export const AuthPage = () => {
 
         .auth-heading h1 {
           font-size: var(--font-size-2xl);
-          color: #fff;
+          color: var(--text-primary);
           margin-bottom: var(--space-1);
         }
 
@@ -396,7 +396,7 @@ export const AuthPage = () => {
         .auth-error {
           background: rgba(239,68,68,0.12);
           border: 1px solid rgba(239,68,68,0.25);
-          color: #fca5a5;
+          color: var(--status-error);
           padding: 12px 16px;
           border-radius: var(--radius-md);
           font-size: var(--font-size-sm);
