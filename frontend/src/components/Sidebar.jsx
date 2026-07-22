@@ -65,16 +65,6 @@ export const Sidebar = ({
 
   return (
     <>
-      {/* ── Mobile hamburger ──────────────────────────────────────────────── */}
-      <button
-        type="button"
-        className="mobile-nav-toggle btn-secondary"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle navigation"
-      >
-        <Menu size={18} />
-      </button>
-
       {/* ── Sidebar ────────────────────────────────────────────────────────── */}
       <motion.div
         className={`sidebar ${isOpen ? 'open' : ''}`}
@@ -680,19 +670,27 @@ export const Sidebar = ({
         /* ─ Mobile ─ */
         @media (max-width: 768px) {
           .sidebar {
-            position: absolute;
+            position: fixed;
+            z-index: 100;
             left: 0;
             top: 0;
             bottom: 0;
-            transform: translateX(-110%);
-            width: var(--sidebar-width-expanded) !important;
+            height: 100dvh;
+            transform: translateX(-105%);
+            width: min(285px, 86vw) !important;
+            box-shadow: 12px 0 40px rgba(0, 0, 0, 0.5);
             transition: transform var(--transition-normal) !important;
+            padding-top: max(var(--space-2), var(--sat));
+            padding-bottom: max(var(--space-2), var(--sab));
           }
           .sidebar.open {
             transform: translateX(0) !important;
           }
-          .mobile-nav-toggle { display: flex; }
           .sidebar-collapse-btn { display: none; }
+          .sidebar-session { padding: 11px 12px; min-height: 42px; }
+          .sidebar-nav-item { padding: 12px 14px; min-height: 44px; }
+          .sidebar-new-btn { padding: 12px 16px; min-height: 44px; }
+          .sidebar-logout-btn { width: 40px; height: 40px; }
         }
       `}</style>
     </>

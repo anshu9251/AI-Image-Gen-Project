@@ -587,8 +587,8 @@ export const AuthPage = () => {
         /* ─ Theme toggle on auth page ─ */
         .auth-theme-toggle {
           position: fixed;
-          top: var(--space-5);
-          right: var(--space-5);
+          top: max(var(--space-4), var(--sat));
+          right: max(var(--space-4), var(--sar));
           z-index: 100;
           width: 38px;
           height: 38px;
@@ -634,13 +634,25 @@ export const AuthPage = () => {
 
         /* ─ Responsive ─ */
         @media (max-width: 900px) {
-          .auth-form-panel { width: 100%; border-right: none; }
+          .auth-root { height: 100vh; height: 100dvh; }
+          .auth-form-panel {
+            width: 100%;
+            border-right: none;
+            padding: var(--space-6) var(--space-4);
+            padding-top: max(var(--space-6), var(--sat));
+            padding-bottom: max(var(--space-6), var(--sab));
+            overflow-y: auto;
+          }
           .auth-showcase-panel { display: none; }
         }
 
         @media (max-width: 480px) {
-          .auth-form-panel { padding: var(--space-6); }
+          .auth-form-panel { padding: var(--space-5) var(--space-4); }
           .auth-inner { max-width: 100%; }
+          .auth-logo-row { margin-bottom: var(--space-5); }
+          .auth-heading { margin-bottom: var(--space-4); }
+          .auth-heading h1 { font-size: var(--font-size-xl); }
+          .input-field { font-size: 16px !important; }
         }
       `}</style>
     </div>

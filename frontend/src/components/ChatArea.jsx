@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Send, Download, RefreshCw, Search, Loader2,
-  Sparkles, AlertCircle, X, ChevronRight, Image, Wand2
+  Sparkles, AlertCircle, X, ChevronRight, Image, Wand2, Menu
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../services/api';
@@ -58,7 +58,7 @@ const lightboxVariants = {
 };
 
 /* ─── Component ──────────────────────────────────────────────────────────────── */
-export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle }) => {
+export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle, onToggleSidebar }) => {
   const [messages, setMessages] = useState([]);
   const [historyImages, setHistoryImages] = useState([]);
   const [prompt, setPrompt] = useState('');
@@ -214,6 +214,15 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle }) => {
 
       {/* ── Header ────────────────────────────────────────────────────────── */}
       <header className="chat-header">
+        <button
+          type="button"
+          className="mobile-header-toggle"
+          onClick={onToggleSidebar}
+          aria-label="Open navigation menu"
+        >
+          <Menu size={19} />
+        </button>
+
         <div className="chat-header-info">
           {viewMode === 'chat' ? (
             <>
@@ -558,6 +567,7 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle }) => {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-primary) 100%);
     position: relative;
@@ -577,6 +587,23 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle }) => {
     backdrop-filter: blur(20px);
     flex-shrink: 0;
     z-index: 10;
+  }
+
+  .mobile-header-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-sidebar-item);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+  }
+  .mobile-header-toggle:hover {
+    background: var(--border-soft);
   }
 
   .chat-header-info {
@@ -1174,14 +1201,106 @@ export const ChatArea = ({ activeSessionId, viewMode, activeSessionTitle }) => {
 
   /* ─ Mobile ─ */
   @media (max-width: 768px) {
-    .chat-header { padding: 0 var(--space-4) 0 72px; }
-    .workspace-area { padding: var(--space-4); }
-    .suggestions-grid { grid-template-columns: 1fr; }
-    .image-bubble-card, .skeleton-card { width: 100%; }
-    .chat-search-bar { display: none; }
-    .chat-footer { padding: var(--space-3) var(--space-4); }
-    .lightbox-content { max-width: 100%; }
-    .welcome-title { font-size: var(--font-size-2xl); }
+    .chat-container {
+      height: 100vh;
+      height: 100dvh;
+    }
+    .chat-header {
+      padding: 0 var(--space-3);
+      padding-top: var(--sat);
+      height: calc(56px + var(--sat));
+    }
+    .mobile-header-toggle {
+      display: flex;
+    }
+    .chat-model-badge {
+      display: none;
+    }
+    .workspace-area {
+      padding: var(--space-3);
+    }
+    .welcome-state {
+      padding: var(--space-4) 0;
+      gap: var(--space-6);
+    }
+    .welcome-title {
+      font-size: 1.4rem;
+    }
+    .welcome-desc {
+      font-size: var(--font-size-xs);
+    }
+    .suggestions-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .suggestion-card {
+      padding: var(--space-3);
+    }
+    .message-bubble.user .bubble-text {
+      max-width: 88%;
+      font-size: var(--font-size-sm);
+      padding: 10px 14px;
+    }
+    .image-bubble-card, .skeleton-card {
+      width: 100%;
+    }
+    .image-card-footer {
+      padding: var(--space-3);
+      gap: var(--space-2);
+    }
+    .chat-search-bar {
+      display: none;
+    }
+    .chat-footer {
+      padding: var(--space-2) var(--space-3) calc(var(--space-2) + var(--sab)) var(--space-3);
+    }
+    .prompt-form {
+      padding: 6px var(--space-2);
+      gap: 6px;
+    }
+    .prompt-textarea {
+      font-size: 16px !important;
+      padding: 5px var(--space-1);
+    }
+    .generate-btn {
+      padding: 8px 14px;
+      font-size: var(--font-size-xs);
+    }
+    .lightbox-overlay {
+      padding: 12px;
+      padding-top: max(16px, var(--sat));
+      padding-bottom: max(16px, var(--sab));
+    }
+    .lightbox-close {
+      top: max(12px, var(--sat));
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
+    .lightbox-content {
+      max-width: 100%;
+      gap: var(--space-2);
+    }
+    .lightbox-content img {
+      max-height: 60dvh;
+    }
+    .lightbox-footer {
+      padding: var(--space-3);
+    }
+    .lightbox-prompt {
+      font-size: var(--font-size-xs);
+      margin-bottom: var(--space-2);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2);
+    }
+    .gallery-card-info {
+      padding: 6px 8px;
+    }
   }
 `}</style>
     </div>

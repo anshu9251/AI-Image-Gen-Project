@@ -144,6 +144,7 @@ const Dashboard = () => {
         activeSessionId={activeSessionId}
         activeSessionTitle={activeSession?.title}
         viewMode={viewMode}
+        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
       />
     </motion.div>
   );
