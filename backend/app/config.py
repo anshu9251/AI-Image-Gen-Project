@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     jwt_algorithm: str = Field(default="HS256", validation_alias="JWT_ALGORITHM")
     access_token_expire_minutes: int = Field(default=1440, validation_alias="ACCESS_TOKEN_EXPIRE_MINUTES")
     hf_api_key: str = Field(default="", validation_alias="HF_API_KEY")
+    cf_account_id: str = Field(default="", validation_alias="CF_ACCOUNT_ID")
+    cf_api_token: str = Field(default="", validation_alias="CF_API_TOKEN")
 
     class Config:
         env_file = ".env"
